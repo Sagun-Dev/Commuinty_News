@@ -11,7 +11,7 @@ body{
 }
 #news{
 	color: white;
-	left:10%;
+	left:8%;
 	position: absolute;
 	font-size: 4em;
 }
@@ -85,4 +85,24 @@ body{
 	background-color: #c7c7c7;
 	border-radius: 1em;
 	box-shadow: 2px 2px 10px;
+}
+#search{
+	position: absolute;
+	top: 5%;
+	right: 36%;
+}
+#search_field{
+	width: 30em;
+	height: 2em;
+}
+#search_btn {
+	position: absolute;
+    background-image: url("../images/search.ico");
+    width:5em;
+    height: 2.2em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-style: hidden;
+    border-radius: 3em;
 }

@@ -9,11 +9,15 @@ $result=$conn_article->query($query);
 <html>
 <head>
 	<title>Welcome</title>
-	<link rel="stylesheet" type="text/css" href="style_index.css">
+	<link rel="stylesheet" type="text/css" href="./CSS/style_index.css">
 </head>
 <body>
 <div id="nav">
 	<div id="news">Daily News</div>
+	<form id="search" action="./Search">
+		<input type="text" name="search" id="search_field">
+		<input type="submit" value="" id="search_btn">
+	</form>
 	<div><a href="./upload.php" id="upload" target="_blank">Upload</div></a>
 	<?php
 		if(isset($_SESSION["login"])){
