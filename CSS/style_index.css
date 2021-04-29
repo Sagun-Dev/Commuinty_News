@@ -20,11 +20,9 @@ body{
 .upload{
 	display: inline-block;
 	color: white;
-	padding-left: 8%;
+	padding-left: 3%;
 	font-size: 1.3em;
 	text-decoration: none;
-
-
 }
 .upload:hover {
 	color: orange;
@@ -99,20 +97,21 @@ body{
 }
 #search{
 	display: inline-block;
-	/*right:  40%;*/
-	/*right: 36%;*/
+	width:35%;
+	margin-left: 5%;
 }
 #search_field{
 	background-color: rgba(0,0,0,0.4);
 	backdrop-filter: blur(2px);
 	backdrop-filter: brightness(80%);
 	color: white;
+	padding-left: 5%;
 	border-radius: 1em;
-	width: 30em;
+	width: 25em;
 	height: 2em;
 }
 #search_btn {
-	position: absolute;
+	display: inline-block;
     background-image: url("../images/search.ico");
     width:5em;
     height: 2.2em;
