@@ -2,8 +2,9 @@
 session_start();
 require_once("../Database/articles/connect.php");
 $title=$_REQUEST['title'];
+$id=$_REQUEST["id"];
 $title=htmlentities($title);
-$query="SELECT * FROM articles WHERE Title='$title'";
+$query="SELECT * FROM articles WHERE Title='$title' and I_D='$id'";
 $result=$conn_article->query($query);
 ?>
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ $result=$conn_article->query($query);
 <body>
 <div id="nav">
 	<a href="../"><div id="news"> Daily News</div></a>
-	<form id="search" action="./Search">
+	<form id="search" action="../Search">
 		<input type="text" name="search" id="search_field">
 		<input type="submit" value="" id="search_btn">
 	</form>

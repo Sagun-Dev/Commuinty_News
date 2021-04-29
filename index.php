@@ -22,7 +22,7 @@ $result=$conn_article->query($query);
 	<?php
 		if(isset($_SESSION["login"])){
 	?>
-	<div><a href="./logout.php" id="logout" target="_blank">Logout</a></div>
+	<div><a href="./logout.php" id="logout">Logout</a></div>
 	<?php
 		$profile = "./profile.php?"."author=".$_SESSION['Author']."&id=".$_SESSION['Author_ID'];
 	?>
@@ -48,7 +48,7 @@ $result=$conn_article->query($query);
 	 ?>
 	<div id="card">
 	<?php
-		$content_loc = "./News?"."title=".$row['Title'];
+		$content_loc = "./News?"."title=".$row['Title']."&id=".$row["I_D"];
 	?>
 	<a href="<?php echo $content_loc; ?>" id="title">
 		<h1 style="margin-bottom: 0;"><?= $row['Title']; ?></h1>

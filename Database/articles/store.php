@@ -1,8 +1,7 @@
 <?php
 session_start();
-var_dump($_SESSION);
 require_once("connect.php");
-require_once("../user/connect.php");
+require_once("../users/connect.php");
 $title=$_POST["title"];
 $title = htmlentities($title);
 $content=$_POST["content"];

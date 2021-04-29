@@ -1,6 +1,5 @@
 <?php
 require_once("connect.php");
-var_dump($_POST);
 $first_name=$_POST["fname"];
 $last_name=$_POST["lname"];
 $dob=$_POST["dob"];
