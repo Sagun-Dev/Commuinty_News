@@ -13,25 +13,27 @@ $result=$conn_article->query($query);
 </head>
 <body>
 <div id="nav">
-	<div id="news">Daily News</div>
-	<form id="search" action="./Search">
-		<input type="text" name="search" id="search_field">
-		<input type="submit" value="" id="search_btn">
-	</form>
-	<div><a href="./upload.php" id="upload" target="_blank">Upload</div></a>
+	<span id="news">Daily News</span>
+	<div id="search">
+		<form action="./Search">
+			<input type="text" name="search" id="search_field" placeholder="Search">
+			<input type="submit" value="" id="search_btn">
+		</form>
+	</div>
+	<div class="upload"><a href="./upload.php" class="upload" target="_blank">Upload</div></a>
 	<?php
 		if(isset($_SESSION["login"])){
 	?>
-	<div><a href="./logout.php" id="logout">Logout</a></div>
+	<div class="logout"><a href="./logout.php" class="logout">Logout</a></div>
 	<?php
 		$profile = "./profile.php?"."author=".$_SESSION['Author']."&id=".$_SESSION['Author_ID'];
 	?>
-	<div><a href="<?=$profile ?>" id="profile" target="_blank">Profile</a></div>
+	<div class="profile"><a href="<?=$profile ?>" class="profile" target="_blank">Profile</a></div>
 	<?php
 		}else{
 	?>
-	<div><a href="./login.php" id="login" target="_blank">Login</a></div>
-	<div><a href="./signup.php" id="signup" target="_blank">Sign Up</a></div>
+	<div class="login"><a href="./login.php" class="login" >Login</a></div>
+	<div class="signup"><a href="./signup.php" class="signup" target="_blank">SignUp</a></div>
 	<?php
 		}
 	?>
