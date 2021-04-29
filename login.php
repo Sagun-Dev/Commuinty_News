@@ -12,7 +12,7 @@ if(count($_POST)>0){
 	<title>Log In</title>
 </head>
 <body>
-<form action="./Database/user/login.php" method="post">
+<form action="./Database/users/login.php" method="post">
 	<label for=email>Email</label>
 	<input type="email" id="email" placeholder="email" name="email" required>
 	<br><br>

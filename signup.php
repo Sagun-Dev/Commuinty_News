@@ -4,7 +4,7 @@
 	<title>Register</title>
 </head>
 <body>
-	<form action="./Database/user/register.php" method="post">
+	<form action="./Database/users/register.php" method="post">
 		<label for=fname>First Name: </label>
 		<input type="text" name="fname" id="fname" required>
 		<br><br>
