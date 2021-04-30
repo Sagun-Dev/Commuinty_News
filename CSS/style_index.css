@@ -4,7 +4,7 @@ body{
 }
 #nav{
 	background-color: black;
-	height: 4.5em;
+	/*height: 4.5em;*/
 	border-bottom-right-radius: 10em;
 	border-bottom-left-radius: 10em;
 	box-shadow: 8px 8px grey;
