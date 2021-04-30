@@ -13,26 +13,32 @@ $articles=$conn_article->query($query);
 <html>
 <head>
 	<title>Profile <?=$_REQUEST["author"]?></title>
+	<link rel="stylesheet" type="text/css" href="./CSS/profile.css">
 </head>
 <body>
-<?php
-if($result->num_rows>0){
-	while($row=$result->fetch_assoc()){?>
-	<label>Name: <?=$row["First_Name"]." ".$row["Last_Name"]?></label><br>
-	<label>DOB: <?=$row["DOB"]?></label><br>
-	<label>Gender: <?=$row["Gender"]?></label><br>
-	<label>Email: <?=$row["Email"]?></label><br>
-<?php
-}
-}else{
-	die("Invalid Details");
-}?>
-<?php
-if($articles->num_rows>0){
-?>
-<label>Articles Contributed: <?=$articles->num_rows?></label><br>
-<?php
+<div id="out">
+	<div id="profile">
+		<img src="./images/profile.ico" id="image"><br>
+		<?php
+		if($result->num_rows>0){
+			while($row=$result->fetch_assoc()){?>
+			<label id="name">Name: <?=$row["First_Name"]." ".$row["Last_Name"]?></label><br>
+			<label id="dob">DOB: <?=$row["DOB"]?></label><br>
+			<label id="gender">Gender: <?=$row["Gender"]?></label><br>
+			<label id="email">Email: <?=$row["Email"]?></label><br>
+		<?php
+		}
+		}else{
+			die("Invalid Details");
+		}?>
+		<?php
+		if($articles->num_rows>0){
+		?>
+		<label id="contribution">Articles Contributed: <?=$articles->num_rows?></label><br>
+		<?php
 
-}?>
+		}?>
+	</div>
+</div>
 </body>
 </html>

@@ -21,7 +21,7 @@ body{
 	display: inline-block;
 	color: white;
 	padding-left: 3%;
-	font-size: 1.3em;
+	font-size: 1.15em;
 	text-decoration: none;
 }
 .upload:hover {
@@ -43,7 +43,7 @@ body{
 	display: inline-block;
 	color: white;
 	padding-left: 2%;
-	font-size: 1.3em;
+	font-size: 1.15em;
 	text-decoration: none;
 }
 .logout{
@@ -51,21 +51,21 @@ body{
 	color: white;
 	padding-left: 2%;
 	margin: auto;
-	font-size: 1.3em;
+	font-size: 1.15em;
 	text-decoration: none;
 }
 .profile{
 	display: inline-block;
 	color: white;
 	padding-left: 2%;
-	font-size: 1.3em;
+	font-size: 1.15em;
 	text-decoration: none;
 }
 .signup{
 	display: inline-block;
 	color: white;
 	padding-left: 2%;
-	font-size: 1.3em;
+	font-size: 1.15em;
 	text-decoration: none;
 }
 #title{

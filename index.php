@@ -49,6 +49,7 @@ $result=$conn_article->query($query);
 	<div id="card">
 	<?php
 		$content_loc = "./News?"."title=".$row['Title']."&id=".$row["I_D"];
+		$profile = "./profile.php?"."author=".$row['Author']."&id=".$row['Author_ID'];
 	?>
 	<a href="<?php echo $content_loc; ?>" id="title">
 		<h1 style="margin-bottom: 0;"><?= $row['Title']; ?></h1>
