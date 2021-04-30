@@ -1,19 +1,20 @@
 <?php
 session_start();
 require_once("connect.php");
-//require_once("../users/connect.php");
+// require_once("../users/connect.php");
 $title=$_POST["title"];
 $title = htmlentities($title);
+$title = addslashes($title);
+
 $content=$_POST["content"];
 $content = htmlentities($content);
 $content=addslashes($content);
-
-var_dump($_SESSION);
-
+echo $content;
 $author=$_SESSION["Author"];
-$author_id=$_SESSION["Author_Id"];
+$author_id=$_SESSION["Author_ID"];
 $query="INSERT INTO articles (`Title`,`Description`,`Author`,`Author_Id`)
 		VALUES ('$title','$content','$author','$author_id')";
-$conn_article->query($query);
+$result=$conn_article->query($query);
+// var_dump($result);
 header("Location: ../../");
 ?>

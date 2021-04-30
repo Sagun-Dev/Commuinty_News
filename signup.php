@@ -3,6 +3,7 @@
 <head>
 	<title>Register</title>
 	<link rel="stylesheet" type="text/css" href="./CSS/signup.css">
+	<meta name="viewport" content="width=device-width">
 </head>
 <body>
 	<div id="out">

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../Database/articles/connect.php");
 $search=$_GET["search"];
 $query="SELECT * FROM articles WHERE Title LIKE '%$search%' or Description LIKE '%$search%'";
@@ -8,6 +9,7 @@ $result=$conn_article->query($query);
 <html>
 <head>
 	<title>Welcome</title>
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="../CSS/style_index.css">
 </head>
 <body>
@@ -47,16 +49,16 @@ $result=$conn_article->query($query);
 	<?php 
 		foreach ($items as $row) {	
 	 ?>
-	<div id="card">
+	<div class="card">
 	<?php
 		$content_loc = "../News?"."title=".$row['Title']."&id=".$row["I_D"];
 		$profile = "./profile.php?"."author=".$row['Author']."&id=".$row['Author_ID'];
 	?>
-	<a href="<?php echo $content_loc; ?>" id="title">
+	<a href="<?php echo $content_loc; ?>" class="title">
 		<h1 style="margin-bottom: 0;"><?= $row['Title']; ?></h1>
 	</a>
-	&nbsp; &nbsp;<a href="<?= $profile ?>" id="author">	<span>  -<?= $row['Author']; ?></span></a><br>
-	<div id="des">
+	&nbsp; &nbsp;<a href="<?= $profile ?>" class="author">	<span>  -<?= $row['Author']; ?></span></a><br>
+	<div class="des">
 		<?php
 		$max_len=200;
 		for($i=0;$i<$max_len;$i++){

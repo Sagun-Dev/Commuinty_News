@@ -14,6 +14,7 @@ $articles=$conn_article->query($query);
 <head>
 	<title>Profile <?=$_REQUEST["author"]?></title>
 	<link rel="stylesheet" type="text/css" href="./CSS/profile.css">
+	<meta name="viewport" content="width=device-width">
 </head>
 <body>
 <div id="out">

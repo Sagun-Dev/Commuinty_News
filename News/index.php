@@ -4,13 +4,15 @@ require_once("../Database/articles/connect.php");
 $title=$_REQUEST['title'];
 $id=$_REQUEST["id"];
 $title=htmlentities($title);
-$query="SELECT * FROM articles WHERE Title='$title' and I_D='$id'";
+$title_show=addslashes($title);
+$query="SELECT * FROM articles WHERE Title='$title_show' and I_D='$id'";
 $result=$conn_article->query($query);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title><?= $_REQUEST['title']?></title>
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="../CSS/style_index.css">
 </head>
 <body>
@@ -45,7 +47,19 @@ if($result->num_rows > 0){
 while($row = $result->fetch_assoc()) {
 ?>
 <h1 style="text-align: center;"><?= $row["Title"]?></h1>
-<p><?=$row["Description"]?></p>
+<p><?php
+	$string=$row["Description"];
+	$string=str_split($string);
+	$description="";
+	foreach ($string as $str) {
+		if($str==chr(10)){
+			$description.="<br>";
+		}else{
+			$description.=$str;
+		}
+	}
+	echo "$description";
+?></p>
 <?php
 }
 }

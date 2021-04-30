@@ -8,6 +8,6 @@ $email=$_POST["email"];
 $password=$_POST["password"];
 $query="INSERT INTO users (`First_Name`,`Last_Name`,`DOB`,`Gender`,`Email`,`Password`)
 		VALUES ('$first_name','$last_name','$dob','$gender','$email','$password')";
-header("Location: ../login.php");
+header("Location: ../../login.php");
 $conn->query($query);
 ?>

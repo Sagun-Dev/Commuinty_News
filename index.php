@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once("./Database/articles/connect.php");
-
-$query="SELECT * FROM articles";
+$_SESSION["voted"]=false;
+$query="SELECT * FROM articles ORDER BY I_D DESC";
 $result=$conn_article->query($query);
 ?>
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ $result=$conn_article->query($query);
 <head>
 	<title>Welcome</title>
 	<link rel="stylesheet" type="text/css" href="./CSS/style_index.css">
+	<meta name="viewport" content="width=device-width">
 </head>
 <body>
 <div id="nav">
@@ -38,40 +39,36 @@ $result=$conn_article->query($query);
 </div>
 	<?php
 		if($result->num_rows > 0){
-		while($row = $result->fetch_assoc()) {
-			$items[]=$row;
-		}
-		$items=array_reverse($items);
-	?>
-	<?php 
-		foreach ($items as $row) {	
-	 ?>
-	<div id="card">
-	<?php
-		$content_loc = "./News?"."title=".$row['Title']."&id=".$row["I_D"];
-		$profile = "./profile.php?"."author=".$row['Author']."&id=".$row['Author_ID'];
-	?>
-	<a href="<?php echo $content_loc; ?>" id="title">
-		<h1 style="margin-bottom: 0;"><?= $row['Title']; ?></h1>
-	</a>
-	&nbsp; &nbsp;<a href="<?= $profile ?>" id="author">	<span>  -<?= $row['Author']; ?></span></a><br>
-	<div id="des">
-		<?php
-		$max_len=200;
-		for($i=0;$i<$max_len;$i++){
-			if($i>=strlen($row['Description'])){
-				break;
+			$x=-1;
+			while($row = $result->fetch_assoc()) {
+				$x+=1;
+				 ?>
+				<div class="card">
+				<?php
+					$content_loc = "./News?"."title=".$row['Title']."&id=".$row["I_D"];
+					$profile = "./profile.php?"."author=".$row['Author']."&id=".$row['Author_ID'];
+				?>
+				<a href="<?php echo $content_loc; ?>" class="title">
+					<h1 style="margin-bottom: 0; display: inline-block;"><?= $row['Title']; ?></h1>
+				</a><br>
+				<a href="<?= $profile ?>" class="author">	<span>  -<?= $row['Author']; ?></span></a><br>
+				<div class="des">
+					<?php
+					$max_len=200;
+					for($i=0;$i<$max_len;$i++){
+						if($i>=strlen($row['Description'])){
+							break;
+						}
+						echo $row['Description'][$i];
+					}
+					if(strlen($row['Description'])>$max_len){
+						echo "...";
+					}
+					?>
+				</div>
+				</div>
+				<?php
 			}
-			echo $row['Description'][$i];
-		}
-		if(strlen($row['Description'])>$max_len){
-			echo "...";
-		}
-		?>
-	</div>
-	</div>
-	<?php
-		}
 		}
 	?>
 </div>

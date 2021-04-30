@@ -11,6 +11,7 @@ if(count($_POST)>0){
 <head>
 	<title>Log In</title>
 	<link rel="stylesheet" type="text/css" href="./CSS/login.css">
+	<meta name="viewport" content="width=device-width">
 </head>
 <body>
 	<div id="out">
