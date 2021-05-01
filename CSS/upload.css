@@ -41,6 +41,7 @@ body{
 	color: white;
 }
 #submit{
+	cursor: pointer;
 	background-color: #742ecc;
 	color: white;
 	padding: 0px;
@@ -52,6 +53,7 @@ body{
 	height: 3em;
 }
 #reset{
+	cursor: pointer;
 	background-color: #742ecc;
 	color: white;
 	padding: 0px;

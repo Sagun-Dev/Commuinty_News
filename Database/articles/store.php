@@ -5,11 +5,10 @@ require_once("connect.php");
 $title=$_POST["title"];
 $title = htmlentities($title);
 $title = addslashes($title);
-
+// var_dump($_POST);
 $content=$_POST["content"];
 $content = htmlentities($content);
 $content=addslashes($content);
-echo $content;
 $author=$_SESSION["Author"];
 $author_id=$_SESSION["Author_ID"];
 $query="INSERT INTO articles (`Title`,`Description`,`Author`,`Author_Id`)
