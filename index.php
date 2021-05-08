@@ -10,14 +10,15 @@ $result=$conn_article->query($query);
 <head>
 	<title>Welcome</title>
 	<link rel="stylesheet" type="text/css" href="./CSS/style_index.css">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div id="nav">
+	<div id="grid">
 	<span id="news">Daily News</span>
 		<form action="./Search" id="search">
 			<input type="text" name="search" id="search_field" placeholder="Search">
-			<input type="submit" value="" id="search_btn">
+			<input type="submit" value="search" id="search_btn">
 		</form>
 	<div class="upload"><a href="./upload.php" class="upload" target="_blank">Upload</div></a>
 	<?php
@@ -36,7 +37,7 @@ $result=$conn_article->query($query);
 	<?php
 		}
 	?>
-</div>
+</div></div>
 	<?php
 		if($result->num_rows > 0){
 			$x=-1;

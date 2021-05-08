@@ -14,13 +14,12 @@ $result=$conn_article->query($query);
 </head>
 <body>
 <div id="nav">
+	<div id="grid">
 	<a href="../"><span id="news"> Daily News</span></a>
-	<div id="search">
-		<form action=".">
+		<form action="." id="search">
 			<input type="text" name="search" id="search_field" placeholder="Search">
 			<input type="submit" value="" id="search_btn">
 		</form>
-	</div>
 	<div class="upload"><a href="../upload.php" class="upload" target="_blank">Upload</div></a>
 	<?php
 		if(isset($_SESSION["login"])){
@@ -38,7 +37,7 @@ $result=$conn_article->query($query);
 	<?php
 		}
 	?>
-</div>
+</div></div>
 <?php
 		if($result->num_rows > 0){
 		while($row = $result->fetch_assoc()) {
@@ -57,7 +56,7 @@ $result=$conn_article->query($query);
 	<a href="<?php echo $content_loc; ?>" class="title">
 		<h1 style="margin-bottom: 0;"><?= $row['Title']; ?></h1>
 	</a>
-	&nbsp; &nbsp;<a href="<?= $profile ?>" class="author">	<span>  -<?= $row['Author']; ?></span></a><br>
+	<a href="<?= $profile ?>" class="author">	<span>  -<?= $row['Author']; ?></span></a><br>
 	<div class="des">
 		<?php
 		$max_len=200;
