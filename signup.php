@@ -8,7 +8,8 @@
 <body>
 	<div id="out">
 		<div id="signup">
-			<form action="./Database/users/register.php" method="post">
+			<form action="./Database/users/register.php" method="post" enctype="multipart/form-data">
+				<div id="header"><label>LOGIN</label></div><br>
 				<input type="text" name="fname" id="fname" placeholder="First Name" required>
 				<br><br>
 				<input type="text" name="lname" id="lname" placeholder="Last Name" required>
@@ -29,6 +30,8 @@
 				<input type="password" name="password" id="password" placeholder="Password" required>
 				<label id="warning"></label>
 				<br><br>
+				<label id="profile-lbl">Profile Pic</label><br>
+				<input type="file" name="image" id="profile"><br><br>
 				<input type="submit" value="Register" id="submit"><br><br>
 				<input type="reset" id="reset">
 			</form>

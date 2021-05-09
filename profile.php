@@ -19,10 +19,21 @@ $articles=$conn_article->query($query);
 <body>
 <div id="out">
 	<div id="profile">
-		<img src="./images/profile.ico" id="image"><br>
 		<?php
 		if($result->num_rows>0){
-			while($row=$result->fetch_assoc()){?>
+			$count=0;
+			while($row=$result->fetch_assoc()){
+				if ($count==0 && $row["profile_pic"]) {
+					$location=$row["profile_pic"];
+		?>
+					<img src="<?=$location?>" id="image"><br>
+		<?php
+				}else{
+		?>
+					<img src="./images/profile.ico" id="image"><br>
+		<?php
+				}
+		?>
 			<label id="name">Name: <?=$row["First_Name"]." ".$row["Last_Name"]?></label><br>
 			<label id="dob">DOB: <?=$row["DOB"]?></label><br>
 			<label id="gender">Gender: <?=$row["Gender"]?></label><br>

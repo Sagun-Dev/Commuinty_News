@@ -1,44 +1,44 @@
 body{
 	background-image: url("../images/login.jpg");
-	background-size: cover;
+	background-size: auto;
 	background-repeat: no-repeat;
 }
 #out{
 	background-color: rgba(0,0,0,0.2);
-	backdrop-filter: blur(6px);
+	backdrop-filter: blur(2px);
 	backdrop-filter: brightness(80%);
-	margin-left: 35%;
-	margin-top: 10%;
-	margin-right: 35%;
-	padding-left: 2%;
-	padding-right: 2%;
+	margin-left: 25vw;
+	margin-top: 12vh;
+	width: 40vw;
+	/*margin-right: 35vw;*/
+	padding-left: 2vw;
+	padding-right: 2vw;
 	box-shadow: 5px 5px 10px;
-	border-radius: 2em;
-	padding-bottom: 2%; 
-	padding-top: 1%;
-	padding-left: 6.5%;
+	border-radius: 2vw;
+	padding-bottom: 2vw; 
+	padding-top: 2vw;
 }
 #name{
-	font-size: 1.2em;
+	font-size: 1.5vw;
 	color: white;
 }
 #dob{
-	font-size: 1.2em;
+	font-size: 1.5vw;
 	color: white;
 }
 #gender{
-	font-size: 1.2em;
+	font-size: 1.5vw;
 	color: white;
 }
 #email{
-	font-size: 1.2em;
+	font-size: 1.5vw;
 	color: white;
 }
 #contribution{
-	font-size: 1.2em;
+	font-size: 1.5vw;
 	color: white;
 }
 #image{
 	width: 40%;
-	padding-left: 16%;
+	padding-left: 11vw;
 }

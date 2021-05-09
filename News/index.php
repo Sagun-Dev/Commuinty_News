@@ -60,6 +60,17 @@ while($row = $result->fetch_assoc()) {
 	echo "$description";
 ?></p>
 <?php
+	if($row['location']){
+		$locations=$row['location'];
+		$locations=json_decode($locations);
+		foreach ($locations as $location) {
+			?>
+				<div style="text-align: center;"><img src="<?=$location?>" style="width: 100%; height: auto"></div>
+			<?php
+		}
+	}
+?>
+<?php
 }
 }
 ?>
