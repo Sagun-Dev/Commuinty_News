@@ -19,7 +19,7 @@ if(!isset($_SESSION["login"])){
 			<input type="text" name="title" id="title" placeholder="Title" required><br><br>
 			<textarea name="content" id="content" placeholder="Content" onkeyup="do_resize(this);" rows=2 required></textarea>
 			<br><br>
-			<input type="file" name="images[]" id="file" multiple>
+			<input type="file" name="images[]" id="file" multiple="multiple">
 			<input type="Submit" value="Publish" id="submit"><br>
 			<input type="Reset" value="Cancel" id="reset" onclick="revert()">
 		</form>

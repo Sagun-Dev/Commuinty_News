@@ -15,7 +15,7 @@ $result=$conn_article->query($query);
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="../CSS/style_index.css">
 </head>
-<body>
+<body style="background-image: none;">
 <div id="nav">
 	<div id="grid">
 	<a href="../"><span id="news">Daily News</span></a>
@@ -44,9 +44,13 @@ $result=$conn_article->query($query);
 <?php
 if($result->num_rows > 0){
 while($row = $result->fetch_assoc()) {
+	$locations=$row['location'];
+	$locations=json_decode($locations);
+	$img_counter=0;
+	$location=$locations[$img_counter];
 ?>
 <h1 style="text-align: center;"><?= $row["Title"]?></h1>
-<p><?php
+<?php
 	$string=$row["Description"];
 	$string=str_split($string);
 	$description="";
@@ -57,23 +61,34 @@ while($row = $result->fetch_assoc()) {
 			$description.=$str;
 		}
 	}
-	echo "$description";
-?></p>
-<?php
-	if($row['location']){
-		$locations=$row['location'];
-		$locations=json_decode($locations);
-		foreach ($locations as $location) {
-			?>
-				<div style="text-align: center;"><img src="<?=$location?>" style="width: 100%; height: auto"></div>
-			<?php
+	$search="[img]";
+	$image_to_add=true;
+	while(true){
+		$replace="<img src='$location' style='width: 100%; height: auto'>";
+		$description=str_replace("/[img]","&sl&bbimg&bb","$description");
+		if(preg_match ("{\[img\]}","$description")){
+			$image_to_add=false;
 		}
+		$description=preg_replace ("{\[img\]}","$replace","$description",1);
+		$img_counter+=1;
+		if($img_counter>=count($locations)){
+			$description=preg_replace ("{\[img\]}","","$description");
+			break;
+		}
+		$location=$locations[$img_counter];
 	}
-?>
+	$description=str_replace("&sl&bbimg&bb","[img]","$description");
+	?> <div style="color: black"><?="$description";?></div>
+	<?php
+	if($image_to_add){
+		foreach ($locations as $location) {?>
+			<img src="<?=$location?>" style='width: 100%; height: auto'><?php
+	}
+	}?>
 <?php
 }
 }
 ?>
-</div>
+
 </body>
 </html>
