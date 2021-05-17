@@ -19,11 +19,11 @@
 				<br><br>
 				<label id="gender_lbl">Gender: </label><br>
 				<input type="radio" name="gender" value="male" id="male" required>
-				<label for="male">Male</label><br>
+				<label for="male" style="color: white;">Male</label><br>
 				<input type="radio" name="gender" value="female" id="female" required>
-				<label for="female">Female</label><br>
+				<label for="female" style="color: white;">Female</label><br>
 				<input type="radio" name="gender" value="other" id="other" required>
-				<label for="other">Other</label><br>
+				<label for="other" style="color: white;">Other</label><br>
 				<br><br>
 				<input type="email" name="email" id="email" placeholder="Email" required>
 				<br><br>

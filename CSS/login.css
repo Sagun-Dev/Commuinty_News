@@ -6,7 +6,6 @@ body{
 #out{
 	background-color: rgba(0,0,0,0.2);
 	backdrop-filter: blur(2px);
-	backdrop-filter: brightness(80%);
 	margin-left: 25vw;
 	margin-top: 12vh;
 	width: 40vw;
