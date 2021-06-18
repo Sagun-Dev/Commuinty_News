@@ -37,6 +37,8 @@ $result=$conn_article->query($query);
 	<?php
 		}
 	?>
+
+
 </div></div>
 	<?php
 		if($result->num_rows > 0){

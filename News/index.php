@@ -47,7 +47,9 @@ while($row = $result->fetch_assoc()) {
 	$locations=$row['location'];
 	$locations=json_decode($locations);
 	$img_counter=0;
-	$location=$locations[$img_counter];
+	if(isset($locations)){
+		$location=$locations[$img_counter];
+	}
 ?>
 <h1 style="text-align: center;"><?= $row["Title"]?></h1>
 <?php
@@ -64,26 +66,33 @@ while($row = $result->fetch_assoc()) {
 	$search="[img]";
 	$image_to_add=true;
 	while(true){
-		$replace="<img src='$location' style='width: 100%; height: auto'>";
-		$description=str_replace("/[img]","&sl&bbimg&bb","$description");
-		if(preg_match ("{\[img\]}","$description")){
-			$image_to_add=false;
-		}
-		$description=preg_replace ("{\[img\]}","$replace","$description",1);
-		$img_counter+=1;
-		if($img_counter>=count($locations)){
-			$description=preg_replace ("{\[img\]}","","$description");
+		if(isset($locations)){
+			$replace="<img src='$location' style='width: 100%; height: auto'>";
+			$description=str_replace("/[img]","&sl&bbimg&bb","$description");
+			if(preg_match ("{\[img\]}","$description")){
+				$image_to_add=false;
+			}
+			$description=preg_replace ("{\[img\]}","$replace","$description",1);
+			$img_counter+=1;
+			if($img_counter>=count($locations)){
+				$description=preg_replace ("{\[img\]}","","$description");
+				break;
+			}
+			$location=$locations[$img_counter];
+		}else{
 			break;
 		}
-		$location=$locations[$img_counter];
 	}
 	$description=str_replace("&sl&bbimg&bb","[img]","$description");
-	?> <div style="color: black"><?="$description";?></div>
+	?> <div style="color: black; font-size: 1.5rem;"><?="$description";?></div>
 	<?php
 	if($image_to_add){
-		foreach ($locations as $location) {?>
-			<img src="<?=$location?>" style='width: 100%; height: auto'><?php
-	}
+		if(isset($locations)){
+			foreach ($locations as $location) {?>
+				<img src="<?=$location?>" style='width: 100%; height: auto'><?php
+			}
+			var_dump($locations);
+		}
 	}?>
 <?php
 }

@@ -1,38 +1,39 @@
+html{
+	font-size: 62.5%;
+}
 body{
 	background-image: url("../images/login.jpg");
-	margin-top: 0vw;
+	margin-top: 0rem;
 }
 #nav{	
 	background-color: black;
-	padding-left: 6vw;
+	padding-left: 6rem;
 	/*height: 4.5em;*/
-	border-bottom-right-radius: 10vw;
-	border-bottom-left-radius: 10vw;
-	box-shadow: 0.8vw 0.8vw grey;
+	border-bottom-right-radius: 10rem;
+	border-bottom-left-radius: 10rem;
+	box-shadow: 0.8rem 0.8rem grey;
 }
 #grid{
 	display: grid;
 	grid-column-gap: 2%;
-	grid-template-columns: 25% 40% 6% 6% 6%;
+	grid-template-columns:  20% 40% 10% 10% 10%;
 	justify-content: left;
 	align-items: center;
 	width: 100%;
-	margin-bottom: 2vw;
+	margin-bottom: 2rem;
 }
-
-
 #news{
 	display: inline-block;
 	color: white;
 	grid-column: 1;
 	text-decoration: none;
 	/*padding-left: 6%;*/
-	font-size: 4vw;
+	font-size: 4rem;
 }
 .upload{
 	grid-column: 3;
 	color: white;
-	font-size: 1.5vw;
+	font-size: 1.5rem;
 	text-decoration: none;
 }
 .upload:hover {
@@ -53,33 +54,33 @@ body{
 .login{
 	grid-column: 5;
 	color: white;
-	font-size: 1.5vw;
+	font-size: 1.5rem;
 	text-decoration: none;
 }
 .logout{
 	grid-column: 5;
 	color: white;
 	margin: auto;
-	font-size: 1.5vw;
+	font-size: 1.5rem;
 	text-decoration: none;
 }
 .profile{
 	grid-column: 4;
 	grid-row: 1;
 	color: white;
-	font-size: 1.5vw;
+	font-size: 1.5rem;
 	text-decoration: none;
 }
 .signup{
 	grid-column: 4;
 	grid-row: 1;
 	color: white;
-	font-size: 1.5vw;
+	font-size: 1.5rem;
 	text-decoration: none;
 }
 .title{
 	grid-column: 2;
-	font-size: 1.5vw;
+	font-size: 1.5rem;
 	margin-bottom: 0px;
 	color:#551a8b;
 	text-decoration: none;
@@ -90,54 +91,73 @@ body{
 	padding-left: 5%;
 }
 .des{
-	margin-bottom: 2vw;
+	margin-bottom: 2rem;
 	padding-left: 4%;
 }
 .card:hover{
 	background-color: rgba(255,255,255,0.8);
 }
 .card{
-	margin-top: 1vh;
-	margin-bottom: 2vh;
-	padding-top: .1vh;
-	padding-bottom: .1vh;
-	padding-left: 1vw;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	padding-top: .1rem;
+	padding-bottom: .1rem;
+	padding-left: 1rem;
 	background-color: #bdbcf3;
-	border-radius: 4vw;
-	box-shadow: 0.2vw 0.2vw 1.0vw;
+	border-radius: 4rem;
+	box-shadow: 0.2rem 0.2rem 1.0rem;
 }
 #search{
 	grid-column: 2;
 	display: grid;
-	grid-template-columns: auto auto auto auto;
-	/*width: 100%;*/
+	grid-template-columns: 75% 5%;
+	width: 100%;
 }
 #search_field{
 	grid-column: 1;
 	background-color: rgba(0,0,0,0.4);
-	backdrop-filter: blur(0.2vw);
+	backdrop-filter: blur(0.2rem);
 	backdrop-filter: brightness(80%);
-	font-size: 1.5vw;
+	font-size: 1.5rem;
 	color: white;
-	padding-left: 1vw;
-	border-radius: 3.5vw;
-	width: 30vw;
-	height: 3vw;
+	padding-left: 1rem;
+	border-radius: 3.5rem;
+	width: auto;
+	height: 3rem;
 }
 #search_btn {
-	grid-column: 4;
-    background-image: url("../images/search.ico");
-    margin-top: 15%;
+	grid-column: 2;
+    background-image: url("../images/search.png");
+    
     color: transparent;
-    width:3.5vw;
-    height: 2.5vw;
-    margin-left: 1vw;
+    width:3.5rem;
+    height: 3.3rem;
+    margin-left: 1rem;
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
     border-style: hidden;
-    border-radius: 1.3vw;
+    border-radius: 1.3rem;
 }
 ::placeholder{
 color:white;
 }
+
+@media(max-width: 1060px){
+	html{
+		font-size: 55%;
+	}
+}
+
+@media(max-width: 969px){
+	html{
+		font-size: 50%;
+	}
+}
+@media(max-width: 768px){
+	html{
+		font-size: 45%;
+	}
+}
+
+

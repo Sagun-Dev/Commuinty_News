@@ -12,7 +12,6 @@ $query="INSERT INTO users (`First_Name`,`Last_Name`,`DOB`,`Gender`,`Email`,`Pass
 $conn->query($query);
 if(strlen($_FILES["image"]["tmp_name"])>0){
 	$location=$_FILES["image"]["tmp_name"];
-	compressImage($_FILES['image']['tmp_name'],$location,60);
 	$query="SELECT * FROM users ORDER BY I_D DESC Limit 0,1";
 	$result=$conn->query($query);
 	$row=$result->fetch_assoc();
