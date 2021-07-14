@@ -9,15 +9,19 @@
 		$downvoters;
 		$voter = $_SESSION['Author_ID'];
 		while($row = $result->fetch_assoc()){
-			if(strlen($row['upvoters']!=0)){
+			if(strlen($row['upvoters'])!=0){
 				$upvoters = json_decode($row['upvoters']);
 				// $upvoters = substr($row['upvoters'], 1,strlen($row['upvoters'])-2);
 				// $upvoters = explode(",", $upvoters);
+			}else{
+				$upvoters = [];
 			}
-			if(strlen($row['downvoters']!=0)){
+			if(strlen($row['downvoters'])!=0){
 				$downvoters=json_decode($row['downvoters']);
 				// $downvoters = substr($row['downvoters'], 1,strlen($row['downvoters'])-2);
 				// $downvoters = explode(",", $downvoters);
+			}else{
+				$downvoters = [];
 			}
 		}
 		// var_dump($upvoters);
