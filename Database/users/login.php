@@ -2,10 +2,9 @@
 session_start();
 require_once("connect.php");
 $email=$_POST["email"];
-$password=$_POST["password"];
+$password=hash('sha256', $_POST["password"]);
 $query="SELECT * FROM users WHERE Email='$email' and Password='$password'";
 $result=$conn->query($query);
-var_dump($result);
 if($result->num_rows > 0){
 	while($row = $result->fetch_assoc()) {
     if($email == $row["Email"] and $password == $row["Password"]){

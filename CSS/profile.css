@@ -17,24 +17,9 @@ body{
 	border-radius: 2vw;
 	padding-bottom: 2vw; 
 	padding-top: 2vw;
+	margin-bottom: 5vw;
 }
-#name{
-	font-size: 1.5vw;
-	color: white;
-}
-#dob{
-	font-size: 1.5vw;
-	color: white;
-}
-#gender{
-	font-size: 1.5vw;
-	color: white;
-}
-#email{
-	font-size: 1.5vw;
-	color: white;
-}
-#contribution{
+#contribution,#trust,#email,#gender,#dob,#name,#totalup,#totaldown,#total{
 	font-size: 1.5vw;
 	color: white;
 }

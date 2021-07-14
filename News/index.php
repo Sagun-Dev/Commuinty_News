@@ -16,31 +16,38 @@ $result=$conn_article->query($query);
 	<link rel="stylesheet" type="text/css" href="../CSS/style_index.css">
 </head>
 <body style="background-image: none;">
-<div id="nav">
-	<div id="grid">
-	<a href="../"><span id="news">Daily News</span></a>
-		<form action="../Search" id="search">
+<nav id="nav">
+	<div id="news"><a href="../">Daily News</a></div>
+	<ul class="nav-links">
+		<li><form action="../Search" id="search">
 			<input type="text" name="search" id="search_field" placeholder="Search">
-			<input type="submit" value="" id="search_btn">
-		</form>
-	<div class="upload"><a href="../upload.php" class="upload" target="_blank">Upload</div></a>
-	<?php
-		if(isset($_SESSION["login"])){
-	?>
-	<div class="logout"><a href="../logout.php" class="logout">Logout</a></div>
-	<?php
-		$profile = "../profile.php?"."author=".$_SESSION['Author']."&id=".$_SESSION['Author_ID'];
-	?>
-	<div class="profile"><a href="<?=$profile ?>" class="profile" target="_blank">Profile</a></div>
-	<?php
-		}else{
-	?>
-	<div class="login"><a href="./login.php" class="login" >Login</a></div>
-	<div class="signup"><a href="./signup.php" class="signup" target="_blank">SignUp</a></div>
-	<?php
+			<input type="submit" value="search" id="search_btn">
+		</form><li>
+		<li><a href="../upload.php" class="upload" target="_blank">Upload</a></li>
+		<?php
+			if(isset($_SESSION["login"])){
+		?>
+		<li><a href="../logout.php" class="logout">Logout</a></li>
+		<?php
+			$profile = "../profile.php?"."author=".$_SESSION['Author']."&id=".$_SESSION['Author_ID'];
+		?>
+		<li><a href="<?=$profile ?>" class="profile" target="_blank">Profile</a></li>
+		<?php
+			}else{
+		?>
+		<li><a href="../login.php" class="login" >Login</a></li>
+		<li><a href="../signup.php" class="signup" target="_blank">SignUp</a></li>
+		<?php
 		}
 	?>
-</div></div>
+	</ul>
+	<div class="burger">
+		<div class="line1"></div>
+		<div class="line2"></div>
+		<div class="line3"></div>
+	</div>
+	
+</nav>
 <?php
 if($result->num_rows > 0){
 while($row = $result->fetch_assoc()) {
@@ -98,6 +105,27 @@ while($row = $result->fetch_assoc()) {
 }
 }
 ?>
+<footer>
+    <div class="footer">
+        <div>
+            <h1>Daily News</h1> 
+        </div>
+        <div>
+        	<h5>Useful Links</h5><br>
+            <ul>
+                <li><a href="../guide.php" style="color:white;">Guide</a></li>
+            </ul>
+        </div>
 
+        <div>
+            <h5>Contact Us</h5>
+            <ul>
+                <li>example@news.com</li>
+                <li>Pokhara, Nepal</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script src="../app.js"></script>
 </body>
 </html>

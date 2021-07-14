@@ -1,6 +1,9 @@
+html{
+	font-size: 62.5%;
+}
 body{
 	background-image: url("../images/login.jpg");
-	background-repeat: no-repeat;
+	background-repeat: fill;
 	background-size:auto;
 }
 #out{
@@ -16,6 +19,8 @@ body{
 	border-radius: 2vw;
 	padding-bottom: 2vw; 
 	padding-top: 2vw;
+	margin-top: 5vw;
+	margin-bottom: 5vw;
 }
 #header{
 	margin-left: 12vw;

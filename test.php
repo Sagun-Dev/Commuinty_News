@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<div id="master">
-&quot;PrtSc&quot;
-&amp;hi&amp;
-</div>
-</body>
-</html>
+<?php
+	var_dump(hash("sha256", "b"));
+?>
