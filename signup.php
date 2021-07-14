@@ -4,6 +4,7 @@
 	<title>Register</title>
 	<link rel="stylesheet" type="text/css" href="./CSS/signup.css">
 	<link rel="stylesheet" type="text/css" href="./CSS/style_index.css">
+	<link rel="icon" href="./images/fav.ico" />
 	<meta name="viewport" content="width=device-width">
 </head>
 <body>

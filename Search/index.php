@@ -19,6 +19,7 @@ $result=$conn_article->query($query);
 	<title>Welcome</title>
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="../CSS/style_index.css">
+	<link rel="icon" href="../images/fav.ico" />
 </head>
 <body>
 <nav id="nav">
@@ -73,9 +74,9 @@ $result=$conn_article->query($query);
 				<h1 style="margin-bottom: 0;"><?= $row['Title']; ?></h1>
 			</a>
 			<div class="vote">
-				<img src="../images/upvote.png" alt="upvote" width="20" height="20" onclick="upvote(<?=$iteration?>,<?=$row['I_D']?>)">
+				<img src="https://raw.githubusercontent.com/Sagun-Dev/img/main/upvote.png" alt="upvote" width="20" height="20" onclick="upvote(<?=$iteration?>,<?=$row['I_D']?>)">
 				<label style="font-size:1.5rem" class="up"><?=$row['upvotes']?></label>
-				<img src="../images/downvote.png" alt="downvote" width="20" height="20" onclick="downvote(<?=$iteration?>,<?=$row['I_D']?>)">
+				<img src="https://raw.githubusercontent.com/Sagun-Dev/img/main/downvote.png" alt="downvote" width="20" height="20" onclick="downvote(<?=$iteration?>,<?=$row['I_D']?>)">
 				<label style="font-size:1.5rem" class="dn"><?=$row['downvotes']?></label>
 			</div>
 			<a href="<?= $profile ?>" class="author">	<span>  -<?= $row['Author']; ?></span></a><br>

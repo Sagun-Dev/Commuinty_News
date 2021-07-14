@@ -2,7 +2,7 @@ html{
 	font-size: 62.5%;
 }
 body{
-	background-image: url("../images/login.jpg");
+	background-image: url("https://raw.githubusercontent.com/Sagun-Dev/img/main/Login.webp");
 	margin-top: 0rem;
 	margin-bottom: 0rem;
 	height: 92vh;
@@ -169,7 +169,7 @@ footer{
 	width: 30rem;
 }
 #search_btn {
-    background-image: url("../images/search.ico");
+    background-image: url("https://raw.githubusercontent.com/Sagun-Dev/img/main/search.ico");
     color: transparent;
     width:3.5rem;
     height: 3.3rem;

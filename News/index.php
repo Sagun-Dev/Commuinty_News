@@ -14,6 +14,7 @@ $result=$conn_article->query($query);
 	<title><?= $_REQUEST['title']?></title>
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="../CSS/style_index.css">
+	<link rel="icon" href="../images/fav.ico" />
 </head>
 <body style="background-image: none;">
 <nav id="nav">
