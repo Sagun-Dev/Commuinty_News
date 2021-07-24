@@ -13,7 +13,7 @@ if(count($_POST)>0){
 	<link rel="stylesheet" type="text/css" href="./CSS/login.css">
 	<link rel="stylesheet" type="text/css" href="./CSS/style_index.css">
 	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="./images/fav.ico" />
+	<link rel="icon" href="https://raw.githubusercontent.com/Sagun-Dev/img/main/fav.ico" />
 </head>
 <body>
 	<nav id="nav">

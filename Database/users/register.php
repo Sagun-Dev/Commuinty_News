@@ -2,6 +2,7 @@
 require_once("connect.php");
 
 $first_name=$_POST["fname"];
+$first_name = str_replace(' ','',$first_name);
 $last_name=$_POST["lname"];
 $dob=$_POST["dob"];
 $gender=$_POST["gender"];

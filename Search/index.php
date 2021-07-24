@@ -19,7 +19,7 @@ $result=$conn_article->query($query);
 	<title>Welcome</title>
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="../CSS/style_index.css">
-	<link rel="icon" href="../images/fav.ico" />
+	<link rel="icon" href="https://raw.githubusercontent.com/Sagun-Dev/img/main/fav.ico" />
 </head>
 <body>
 <nav id="nav">
@@ -54,6 +54,7 @@ $result=$conn_article->query($query);
 	</div>
 	
 </nav>
+<div class="holder">
 <?php
 		if($result->num_rows > 0){
 		while($row = $result->fetch_assoc()) {
@@ -100,6 +101,7 @@ $result=$conn_article->query($query);
 		}
 		}
 	?>
+	</div>
 	</div>
 	<form action="#" method="get">
 		<div id="container">

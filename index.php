@@ -7,8 +7,8 @@ if(!isset($page)){
 if(isset($_GET['page'])){
 	$page = $_GET['page'];
 }
-$offset = ($page-1)*20;
-$query="SELECT * FROM articles ORDER BY I_D DESC Limit "."$offset"." ,20";
+$offset = ($page-1)*18;
+$query="SELECT * FROM articles ORDER BY I_D DESC Limit "."$offset"." ,18";
 $result=$conn_article->query($query);
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $result=$conn_article->query($query);
 	<title>Welcome</title>
 	<link rel="stylesheet" type="text/css" href="./CSS/style_index.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="./images/fav.ico" />
+	<link rel="icon" href="https://raw.githubusercontent.com/Sagun-Dev/img/main/fav.ico" />
 </head>
 <body>
 <nav id="nav">
@@ -53,6 +53,7 @@ $result=$conn_article->query($query);
 	</div>
 	
 </nav>
+ <div class="holder">
 	<?php
 		if($result->num_rows > 0){
 			$x=-1;
@@ -60,42 +61,45 @@ $result=$conn_article->query($query);
 			while($row = $result->fetch_assoc()) {
 				$x+=1;
 				 ?>
-				<div class="card">
-				<?php
-					$content_loc = "./News?"."title=".$row['Title']."&id=".$row["I_D"];
-					$profile = "./profile.php?"."author=".$row['Author']."&id=".$row['Author_ID'];
-				?>
 				
-				<a href="<?php echo $content_loc; ?>" class="title">
-					<h1 style="margin-bottom: 0; display: inline-block;"><?= $row['Title']; ?></h1>
-				</a><br>
-				<div class="vote">
-					<img src="https://raw.githubusercontent.com/Sagun-Dev/img/main/upvote.png" alt="upvote" width="20" height="20" onclick="upvote(<?=$iteration?>,<?=$row['I_D']?>)">
-					<label style="font-size:1.5rem" class="up"><?=$row['upvotes']?></label>
-					<img src="https://raw.githubusercontent.com/Sagun-Dev/img/main/downvote.png" alt="downvote" width="20" height="20" onclick="downvote(<?=$iteration?>,<?=$row['I_D']?>)">
-					<label style="font-size:1.5rem" class="dn"><?=$row['downvotes']?></label>
-				</div>
-				<a href="<?= $profile ?>" class="author" style="font-size: 1.5rem">	<span>  -<?= $row['Author']; ?></span></a><br>
-				<div class="des" style="font-size: 1.5rem;">
+				<div class="card">
 					<?php
-					$max_len=200;
-					for($i=0;$i<$max_len;$i++){
-						if($i>=strlen($row['Description'])){
-							break;
-						}
-						echo $row['Description'][$i];
-					}
-					if(strlen($row['Description'])>$max_len){
-						echo "...";
-					}
+						$content_loc = "./News?"."title=".$row['Title']."&id=".$row["I_D"];
+						$profile = "./profile.php?"."author=".$row['Author']."&id=".$row['Author_ID'];
 					?>
+					
+					<a href="<?php echo $content_loc; ?>" class="title">
+						<h1 style="margin-bottom: 0; display: inline-block;"><?= $row['Title']; ?></h1>
+					</a><br>
+					<div class="vote">
+						<img src="https://raw.githubusercontent.com/Sagun-Dev/img/main/upvote.png" alt="upvote" width="20" height="20" onclick="upvote(<?=$iteration?>,<?=$row['I_D']?>)">
+						<label style="font-size:1.5rem" class="up"><?=$row['upvotes']?></label>
+						<img src="https://raw.githubusercontent.com/Sagun-Dev/img/main/downvote.png" alt="downvote" width="20" height="20" onclick="downvote(<?=$iteration?>,<?=$row['I_D']?>)">
+						<label style="font-size:1.5rem" class="dn"><?=$row['downvotes']?></label>
+					</div>
+					<a href="<?= $profile ?>" class="author" style="font-size: 1.5rem">	<span>  -<?= $row['Author']; ?></span></a><br>
+					<div class="des" style="font-size: 1.5rem;">
+						<?php
+						$max_len=200;
+						for($i=0;$i<$max_len;$i++){
+							if($i>=strlen($row['Description'])){
+								break;
+							}
+							echo $row['Description'][$i];
+						}
+						if(strlen($row['Description'])>$max_len){
+							echo "...";
+						}
+						?>
+					</div>
 				</div>
-				</div>
+
 				<?php
 				$iteration++;
 			}
 		}
 	?>
+</div>
 </div>
 <div>
 	
@@ -103,7 +107,7 @@ $result=$conn_article->query($query);
 	<form action="#" method="get">
 		<div id="container">
 		<?php
-			if($result->num_rows==20){
+			if($result->num_rows==18){
 		?>
 				<button type="submit"  id="next" name="page" value=<?=$page+1?>>Next</button>
 		<?php

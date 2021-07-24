@@ -33,6 +33,7 @@ body{
 	width: 34vw;
 	height: 6.8vh;
 	border-radius: 2vh;
+	color: white;
 }
 #password{
 	background-color: rgba(0,0,0,0.2);
@@ -44,6 +45,7 @@ body{
 	width: 34vw;
 	height: 6.8vh;
 	border-radius: 2vh;
+	color: white;
 }
 #submit{
 	cursor: pointer;

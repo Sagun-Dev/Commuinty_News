@@ -10,7 +10,7 @@ if(!isset($_SESSION["login"])){
 	<title>Upload</title>
 	<link rel="stylesheet" type="text/css" href="./CSS/upload.css">
 	<link rel="stylesheet" type="text/css" href="./CSS/style_index.css">
-	<link rel="icon" href="./images/fav.ico" />
+	<link rel="icon" href="https://raw.githubusercontent.com/Sagun-Dev/img/main/fav.ico" />
 	<meta name="viewport" content="width=device-width">
 </head>
 <body>

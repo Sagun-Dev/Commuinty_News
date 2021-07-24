@@ -36,7 +36,7 @@
 </nav>
 	<div id="out">
 		<div id="signup">
-			<form action="./Database/users/register.php" method="post" enctype="multipart/form-data">
+			<form onsubmit="return check()" action="./Database/users/register.php" method="post" enctype="multipart/form-data">
 				<div id="header"><label>LOGIN</label></div><br>
 				<input type="text" name="fname" id="fname" placeholder="First Name" required>
 				<br><br>
@@ -86,5 +86,23 @@
         </div>
     </div>
     </footer>
+    <script type="text/javascript">
+    	function check(){
+    		var firstname = document.getElementById("fname").value;
+    		var lastname = document.getElementById("lname").value;
+    		if(firstname.trim().length>0 && lastname.trim().length>0){
+    			return true;
+    		}else if(firstname.trim().length==0 && lastname.trim().length==0){
+    			document.getElementById("fname").style.borderColor = "red";
+    			document.getElementById("lname").style.borderColor = "red";
+    		}else if(lastname.trim().length==0){
+    			document.getElementById("lname").style.borderColor = "red";
+    		}else{
+    			document.getElementById("fname").style.borderColor = "red";
+    		}
+    		return false;
+    		
+    	}
+    </script>
 </body>
 </html>
