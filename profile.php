@@ -90,8 +90,8 @@ $articles=$conn_article->query($query);
 					$trustscore = $upvotes/($upvotes+$downvotes)*100;
 				}?>
 				<label id="totalup">Total Upvotes: <?=(int)$upvotes?></label><br>
-				<label id="totaldown">Total Upvotes: <?=(int)$downvotes?></label><br>
-				<label id="total">Total Upvotes: <?=(int)$upvotes+$downvotes?></label><br>
+				<label id="totaldown">Total Downvotes: <?=(int)$downvotes?></label><br>
+				<label id="total">Total Votes: <?=(int)$upvotes+$downvotes?></label><br>
 				<label id="trust">Trust Score: <?=(int)$trustscore?></label><br>
 				<?php
 			}
