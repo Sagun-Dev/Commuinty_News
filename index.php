@@ -53,7 +53,6 @@ $result=$conn_article->query($query);
 	</div>
 	
 </nav>
- <div class="holder">
 	<?php
 		if($result->num_rows > 0){
 			$x=-1;
@@ -99,7 +98,6 @@ $result=$conn_article->query($query);
 			}
 		}
 	?>
-</div>
 </div>
 <div>
 	

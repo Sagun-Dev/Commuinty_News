@@ -54,7 +54,7 @@ $result=$conn_article->query($query);
 	</div>
 	
 </nav>
-<div class="holder">
+
 <?php
 		if($result->num_rows > 0){
 		while($row = $result->fetch_assoc()) {
@@ -101,7 +101,7 @@ $result=$conn_article->query($query);
 		}
 		}
 	?>
-	</div>
+
 	</div>
 	<form action="#" method="get">
 		<div id="container">

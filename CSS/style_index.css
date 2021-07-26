@@ -7,10 +7,6 @@ body{
 	margin-bottom: 0rem;
 	height: 92vh;
 }
-.holder{
-	display: grid;
-	grid-template-columns: 33% 33% 33%;
-}
 #nav{
 	display: flex;
 	margin-bottom: 1rem;
